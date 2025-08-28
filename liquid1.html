@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {%- auth0:head -%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In to Neralake</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://images.pexels.com/photos/1287142/pexels-photo-1287142.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+    }
+    /* Override Auth0 widget background with higher specificity */
+    .auth0-lock.auth0-lock,
+    .auth0-lock.auth0-lock .auth0-lock-widget,
+    .auth0-lock.auth0-lock .auth0-lock-container,
+    .auth0-lock.auth0-lock .auth0-lock-content,
+    .auth0-lock.auth0-lock .auth0-lock-form,
+    .auth0-lock.auth0-lock .auth0-lock-overlay,
+    .auth0-lock.auth0-lock .auth0-lock-credential,
+    .c3cfb6310 {
+      background: rgba(255, 255, 255, 0.15) !important; /* Transparent background */
+      backdrop-filter: blur(12px) !important; /* Frosted glass effect */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important; /* Subtle shadow */
+      border-radius: 12px !important; /* Rounded corners */
+      border: none !important; /* Remove any default borders */
+    }
+    /* Ensure text readability */
+    .auth0-lock.auth0-lock .auth0-lock-input,
+    .auth0-lock.auth0-lock .auth0-lock-content,
+    .auth0-lock.auth0-lock .auth0-lock-title {
+      color: #ffffff !important; /* White text for contrast */
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.7) !important; /* Softer shadow */
+    }
+    /* Completely remove logo and header */
+    .auth0-lock.auth0-lock .auth0-lock-header,
+    .auth0-lock.auth0-lock .auth0-lock-header-logo,
+    .auth0-lock.auth0-lock .auth0-lock-header-bg {
+      display: none !important; /* Hide logo and header elements */
+      height: 0 !important; /* Ensure no space is taken */
+      visibility: hidden !important; /* Extra measure to hide */
+    }
+    /* Purple Sign Up link */
+    .auth0-lock.auth0-lock .auth0-lock-alternative a,
+    .auth0-lock.auth0-lock .auth0-lock-alternative-link {
+      color: #800080 !important; /* Purple */
+      font-weight: bold !important;
+      text-decoration: underline !important;
+    }
+    /* Center "Don't have an account? Sign Up" below Continue button */
+    .auth0-lock.auth0-lock .auth0-lock-alternative {
+      text-align: center !important;
+      margin-top: 12px !important;
+      width: 100% !important;
+      display: block !important;
+      color: #ffffff !important; /* White text for visibility */
+      font-size: 14px !important;
+    }
+    /* Style Continue button */
+    .auth0-lock.auth0-lock .auth0-lock-submit {
+      background: #4b0082 !important; /* Darker purple */
+      color: #ffffff !important; /* White text */
+      border-radius: 5px !important;
+      padding: 10px !important;
+      font-size: 16px !important;
+      border: none !important;
+    }
+    /* Center and size widget */
+    .auth0-lock.auth0-lock .auth0-lock-container,
+    .ce9cf8e39 {
+      max-width: 400px !important;
+      width: 100% !important;
+      padding: 20px !important;
+      margin: 0 auto !important;
+    }
+    /* Override any conflicting Auth0 variables */
+    :root {
+      --widget-background-color: transparent !important; /* Override default white */
+      --box-shadow: none !important; /* Remove default shadow */
+      --border-radius-outer: 12px !important; /* Match custom border radius */
+    }
+  </style>
+</head>
+<body>
+  {%- auth0:widget -%}
+</body>
+</html>
