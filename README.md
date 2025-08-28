@@ -140,8 +140,9 @@ Auth0's Management API allows programmatic management of tenant settings, such a
 
 ## Examples from Real Sites
 
-- **Open AI**: [Add details if available]
-- **Nutmeg**: [Add details if available]
+- **Open AI**: ![Open AI login](/img/exampleOther3.png)
+- **Nutmeg**: ![Nutmeg login](/img/exampleOther4.png)
+- **Wyndham Rewards**: ![Wyndham login](/img/exampleOther5.png)
 
 ## Conclusion
 
