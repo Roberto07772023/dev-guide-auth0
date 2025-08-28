@@ -8,6 +8,8 @@ Auth0's default Universal Login forms are secure and handle sign-up, login, and 
 
 **Note**: Auth0 recommends Universal Login for most cases due to its hosted nature, ensuring better security (automatic vulnerability updates) and easier maintenance. For deeper customizations, you may need to explore beyond the defaults.
 
+![Original Auth(0) Login](/img/ogAuth0.png)
+
 ## Option 1: Using the Auth0 Dashboard (No-Code Editor for Universal Login)
 
 The quickest way to customize if you're not comfortable coding or need only basic changes.
@@ -27,7 +29,10 @@ The quickest way to customize if you're not comfortable coding or need only basi
 
 ### Examples Made Using Dashboard
 
-[Add examples made using the Dashboard]
+![Dashboard Example 1](/img/exampleDashboard1.png)
+![Dashboard Example 2](/img/exampleDashboard2.png)
+![Dashboard Example 3](/img/exampleDashboard3.png)
+![Dashboard Example 4](/img/exampleDashboard4.png)
 
 ## Option 2: Using Liquid Language (Page Templates for Universal Login)
 
@@ -51,7 +56,7 @@ For deeper customization within Universal Login, Liquid templates allow HTML, CS
 
 ### Example Made with Liquid Language
 
-[Add example made with Liquid]
+![Liquid Example 1](/img/exampleLiquid1.png)
 
 ## Option 3: Switching to Classic Login and Editing CSS/JS
 
@@ -72,7 +77,7 @@ For maximum flexibility, switch to the deprecated Classic Login to use Auth0's L
 
 ### Example Made with Classic Login
 
-[Add example made with Classic Login]
+![Classic Example 1](/img/exampleClassic1.png)
 
 ## Option 4: Using the Management API and Postman for Customization
 
@@ -121,7 +126,8 @@ Auth0's Management API allows programmatic management of tenant settings, such a
 
 ### Examples Made with Management Api + Postman
 
-[Add example made with Management API + Postman]
+![Management API Example](/img/exampleMGMT1.png)
+
 
 ## Comparison Table
 
