@@ -147,7 +147,7 @@ Auth0's Management API allows programmatic management of tenant settings, such a
 
 ## Conclusion
 
-Customizing Auth0 forms enhances your app's branding and user experience. Start with the dashboard for simplicity and scale up to Liquid templates, Classic Login, or the Management API based on your needs. Test thoroughly in a dev environment to avoid disruptions. Happy customizing!
+Customizing Auth0 forms enhances your app's branding and user experience. Start with the dashboard for simplicity and scale up to liquid templates based on your needs. Test thoroughly in a dev environment to avoid disruptions. Happy customizing!
 
 ## Credits
 
