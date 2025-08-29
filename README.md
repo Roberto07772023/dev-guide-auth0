@@ -57,6 +57,7 @@ For deeper customization within Universal Login, Liquid templates allow HTML, CS
 ### Example Made with Liquid Language
 
 ![Liquid Example 1](/img/exampleLiquid1.png)
+![Liquid Example 2](/img/exampleLiquid2.png)
 
 ## Option 3: Switching to Classic Login and Editing CSS/JS
 

@@ -1,0 +1,162 @@
+<!-- This code, used in postman with management API on an Auth(0) login page 
+ will result in the image - exampleLiquid2.png -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  {%- auth0:head -%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In to Humpty Dumpty</title>
+  <style>
+    body {
+  position: relative; /* Ensure positioning context */
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; /* Keep right alignment */
+  background-image: url('https://images.pexels.com/photos/2831799/pexels-photo-2831799.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+.auth0-lock.auth0-lock .auth0-lock-container {
+  max-width: 400px !important;
+  width: 100% !important;
+  position: absolute !important;
+  right: 0 !important; /* Start from the right edge */
+  transform: translateX(200px) !important; /* Move left by 200px */
+  padding: 20px !important;
+}
+    .auth0-lock.auth0-lock,
+    .auth0-lock.auth0-lock .auth0-lock-widget,
+    .auth0-lock.auth0-lock .auth0-lock-content,
+    .auth0-lock.auth0-lock .auth0-lock-form,
+    .auth0-lock.auth0-lock .auth0-lock-overlay,
+    .auth0-lock.auth0-lock .auth0-lock-credential {
+      background: rgba(255, 255, 255, 0.15) !important;
+      backdrop-filter: blur(12px) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+      border-radius: 12px !important;
+      border: none !important;
+    }
+    /* Hide logo */
+    .auth0-lock.auth0-lock .cab127e3b,
+    .auth0-lock.auth0-lock #prompt-logo-center,
+    .auth0-lock.auth0-lock .cab127e3b img,
+    .auth0-lock.auth0-lock #prompt-logo-center img,
+    .auth0-lock.auth0-lock .auth0-lock-header {
+      display: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      visibility: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      opacity: 0 !important;
+    }
+    /* Welcome message */
+    .auth0-lock.auth0-lock .c1a1e4353,
+    .auth0-lock.auth0-lock .cf1583db0 {
+      color: #000000 !important; /* Black text */
+      font-size: 20px !important;
+    }
+    /* Continue button */
+    .auth0-lock.auth0-lock .cd3f9461c,
+    .auth0-lock.auth0-lock ._button-login-id,
+    .auth0-lock.auth0-lock [data-action-button-primary="true"] {
+      background: #000000 !important;
+      color: #ffffff !important;
+      border-radius: 5px !important;
+      padding: 10px !important;
+      font-size: 16px !important;
+      border: none !important;
+      min-height: 52px !important;
+    }
+    /* Sign Up link */
+    .auth0-lock.auth0-lock .c5268a2db,
+    .auth0-lock.auth0-lock .c7d943d86 {
+      color: #E2725B !important; /* Terracotta orange */
+      font-weight: 700 !important;
+      text-decoration: underline !important;
+    }
+    .auth0-lock.auth0-lock .auth0-lock-alternative,
+    .auth0-lock.auth0-lock .ulp-alternate-action {
+      text-align: center !important;
+      margin-top: 16px !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth0-lock-container">
+    {%- auth0:widget -%}
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const widgetContainer = document.querySelector('.auth0-lock-container');
+if (widgetContainer) {
+  widgetContainer.style.marginRight = '200px';
+}
+      // Override welcome message
+      const welcomeTitle = document.querySelector('.c1a1e4353, .cf1583db0');
+      if (welcomeTitle) {
+        {% if customer %}
+          welcomeTitle.textContent = "Let's Get Crackin', {{ customer.first_name | capitalize }}";
+        {% else %}
+          welcomeTitle.textContent = "Let's Get Crackin'";
+        {% endif %}
+      }
+      // Hide logo with MutationObserver
+      const logoObserver = new MutationObserver((mutations) => {
+        const logoElements = document.querySelectorAll('.cab127e3b, #prompt-logo-center, .cab127e3b img, #prompt-logo-center img, .auth0-lock-header');
+        logoElements.forEach(element => {
+          element.style.display = 'none';
+          element.style.height = '0';
+          element.style.width = '0';
+          element.style.visibility = 'hidden';
+          element.style.margin = '0';
+          element.style.padding = '0';
+          element.style.overflow = 'hidden';
+          element.style.position = 'absolute';
+          element.style.opacity = '0';
+        });
+      });
+      logoObserver.observe(document.body, { childList: true, subtree: true, attributes: true });
+      // Override button styles with MutationObserver and delay
+      const buttonObserver = new MutationObserver((mutations) => {
+        const continueButton = document.querySelector('.cd3f9461c, ._button-login-id, [data-action-button-primary="true"]');
+        if (continueButton) {
+          continueButton.style.backgroundColor = '#000000';
+          continueButton.style.color = '#ffffff';
+          continueButton.style.borderRadius = '5px';
+          continueButton.style.padding = '10px';
+          continueButton.style.fontSize = '16px';
+          continueButton.style.border = 'none';
+          continueButton.style.minHeight = '52px';
+        }
+      });
+      buttonObserver.observe(document.body, { childList: true, subtree: true, attributes: true });
+      // Apply button styles after a delay to catch Auth0 rendering
+      setTimeout(() => {
+        const continueButton = document.querySelector('.cd3f9461c, ._button-login-id, [data-action-button-primary="true"]');
+        if (continueButton) {
+          continueButton.style.backgroundColor = '#000000';
+          continueButton.style.color = '#ffffff';
+        }
+      }, 500);
+      // Override Sign Up link color
+      const signUpLink = document.querySelector('.c5268a2db, .c7d943d86');
+      if (signUpLink) {
+        signUpLink.style.color = '#E2725B'; // Terracotta orange
+        signUpLink.style.fontWeight = '700';
+        signUpLink.style.textDecoration = 'underline';
+      }
+    });
+  </script>
+</body>
+</html>
